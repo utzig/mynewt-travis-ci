@@ -46,7 +46,7 @@ is_blacklisted() {
 }
 
 TARGETS=$(cat ${TRAVIS_BUILD_DIR}/targets.txt)
-for unittest in ${TARGETS}; do
+for unittest in "kernel/os/selftest"; do
     # TODO: ignore tests that fail on Ubuntu 14.04
     if [ ${TRAVIS_OS_NAME} = "linux" ]; then
         if is_blacklisted "$unittest"
