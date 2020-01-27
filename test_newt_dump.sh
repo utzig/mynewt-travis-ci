@@ -27,7 +27,7 @@ do
 
     printf "Checking target \"$target\"\n"
     newt target dump "$target" > tmp.txt
-    diff -w "$i" tmp.txt
+    diff -w --strip-trailing-cr "$i" tmp.txt
     rc="$?"
 
     # Remember failure.
